@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Demo</title>
+<link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+
+	<h1 style="text-align: center">List Of Records</h1>
+	<table>
+		<tr>
+			<th>SNO</th>
+			<th>NAME</th>
+			<th>VALUE</th>
+		</tr>
+
+		<tr th:each="map,itrStatus : ${dataList}">
+			<td th:text="${itrStatus.count}"></td>
+			<td th:text="${map.key}">name</td>
+			<td th:text="${map.value}">value</td>
+
+		</tr>
+	</table>
+
+
+
+</body>
+</html>
